@@ -1,19 +1,17 @@
 import _ from 'lodash';
-import './style.css';
-import Data from './data.xml'
-var Icon = require('./Icon.jpg');
+import printMe from './print';
+
 function component() {
     var element = document.createElement('div');
+    var btn = document.createElement('button');
   
-    // Lodash, now imported by this script
+
     element.innerHTML = _.join(['Hello', 'webpack','&#xe91b;'], ' ');
-    element.classList.add('hello');
-    
-    // 将图像添加到现有DIV
-    var myIcon = new Image();
-    myIcon.src = Icon;
-    element.appendChild(myIcon);
-    console.log(Data)
+
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = printMe;
+
+    element.appendChild(btn);
   
     return element;
   }
